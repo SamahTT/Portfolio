@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samah Asulami | Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="logo"><a href="index.html">Samah</a></div>
+        <ul class="nav-list">
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Find Me</a></li>
+        </ul>
+        <i class="ri-menu-line menu"></i>
+    </div>
+
+    <div class="hero">
+        <div class="intro">
+            <h1 class="heading">
+                Hello, I'm Samah🐱
+            </h1>
+            <p class="sub-heading">
+                I'm a senior computer science student,
+                and a hard working Frontend developer.
+                I focus on providing friendly experience to users.
+            </p>
+            <div class="links">
+                <a href="mailto:samahalsulami15@gmail.com">
+                    <i class="ri-mail-fill"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/samah-alsulami">
+                    <i class="ri-linkedin-fill"></i>
+                </a>
+                <a href="https://github.com/SamahTT">
+                    <i class="ri-github-fill"></i>
+                </a>
+            </div>
+        </div>
+        <img src="assets/hero-image.png" alt="Hero Image">
+    </div>
+
+    <div class="section reveal" id="skills">
+        <div class="title">
+            <h1 class="heading">Skills✨</h1>
+        </div>
+        <div class="section-content">
+            <div class="card">
+                <p class="sub-heading">Frontend Skills</p>
+                <p><i class="ri-html5-fill"></i>HTML</p>
+                <p><i class="ri-css3-fill"></i>CSS</p>
+                <p><i class="ri-javascript-fill"></i>JavaScript</p>
+                <p><i class="ri-bootstrap-fill"></i>Bootstrap</p>
+            </div>
+            <div class="card">
+                <p class="sub-heading">More Skills</p>
+                <p>Flask (Python framework)</p>
+                <p>C/C++</p>
+                <p>Microsoft Office</p>
+                <p>Java</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section reveal" id="projects">
+        <div class="title">
+            <h1 class="heading">Projects👩🏻‍💻</h1>
+        </div>
+        <div class="section-content">
+            <div class="card centered">
+                <p class="sub-heading">Recommender System</p>
+                <button onclick="window.location.href='https://youtu.be/4h330iUgp-w'">Demo</button>
+            </div>
+            <div class="card centered">
+                <p class="sub-heading">Dialect Classification</p>
+                <button
+                    onclick="window.location.href='https://www.kaggle.com/code/samahmoe/nlp-project-final-update'">Demo</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="section reveal" id="contact">
+        <div class="title">
+            <h1 class="heading">Find Me😊</h1>
+        </div>
+        <div class="section-content">
+            <div class="card colored-card">
+                <a href="mailto:samahalsulami15@gmail.com">
+                    <p>
+                        <i class="ri-mail-fill"></i> samahalsulami15@gmail.com
+                    </p>
+                </a>
+                <p>
+                    <a href="https://www.linkedin.com/in/samah-alsulami">
+                        <i class="ri-linkedin-fill"></i> samah-alsulami
+                    </a>
+                </p>
+                <p>
+                    <a href="https://github.com/SamahTT">
+                        <i class="ri-github-fill"></i> SamahTT
+                    </a>
+                </p>
+                <p>
+                    <a href="https://www.frontendmentor.io/profile/SamahTT">
+                        <i class="ri-braces-line"></i> SamahTT
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('scroll', reveal);
+        document.querySelector('.menu').addEventListener('click', showMenu);
+
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowheight = window.innerHeight;
+                var revealtop = reveals[i].getBoundingClientRect().top;
+                var revealpoint = 150;
+
+                if (revealtop < windowheight - revealpoint) {
+                    reveals[i].classList.add('active');
+                }
+                else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+
+        function showMenu() {
+            const navList = document.querySelector('.nav-list');
+            const menuButton = document.querySelector('.menu');
+
+            // Toggle 'revealMenu' class when menu button is clicked
+            menuButton.addEventListener('click', () => {
+                navList.classList.toggle('revealMenu');
+            });
+
+            // Add event listener to close the menu when menu items are clicked
+            const menuItems = document.querySelectorAll('.nav-list li');
+            menuItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    navList.classList.remove('revealMenu');
+                });
+            });
+        }
+
+        // Call showMenu function to initialize
+        showMenu();
+    </script>
+</body>
+
+</html>
