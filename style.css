@@ -115,11 +115,15 @@ a {
 }
 
 .title {
-    width: 15%;
+    width: 19%;
+}
+
+.highlight{
+    background-color: var(--accent-color-1);
 }
 
 .section-content {
-    width: 65%;
+    width: 61%;
     display: flex;
     justify-content: space-evenly;
 }
@@ -149,6 +153,7 @@ a {
     padding-bottom: 0.7em;
     color: var(--bg-color);
     cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .contact p {
